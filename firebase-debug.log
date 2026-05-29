@@ -1,0 +1,54 @@
+[debug] [2026-05-26T04:30:20.572Z] ----------------------------------------------------------------------
+[debug] [2026-05-26T04:30:20.586Z] Command:       /home/nararya/.nvm/versions/node/v20.20.2/bin/node /home/nararya/.nvm/versions/node/v20.20.2/bin/firebase projects:list
+[debug] [2026-05-26T04:30:20.587Z] CLI Version:   15.18.0
+[debug] [2026-05-26T04:30:20.587Z] Platform:      linux
+[debug] [2026-05-26T04:30:20.587Z] Node Version:  v20.20.2
+[debug] [2026-05-26T04:30:20.587Z] Time:          Tue May 26 2026 11:30:20 GMT+0700 (Western Indonesia Time)
+[debug] [2026-05-26T04:30:20.587Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2026-05-26T04:30:20.589Z] >>> [apiv2][query] GET https://firebase-public.firebaseio.com/cli.json [none]
+[debug] [2026-05-26T04:30:20.928Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2026-05-26T04:30:20.929Z] > authorizing via signed-in user (aryaganzz09@gmail.com)
+[debug] [2026-05-26T04:30:20.931Z] Checked if tokens are valid: false, expires at: 1779264320728
+[debug] [2026-05-26T04:30:20.932Z] Checked if tokens are valid: false, expires at: 1779264320728
+[debug] [2026-05-26T04:30:20.932Z] > refreshing access token with scopes: []
+[debug] [2026-05-26T04:30:20.935Z] >>> [apiv2][query] POST https://www.googleapis.com/oauth2/v3/token [none]
+[debug] [2026-05-26T04:30:20.935Z] >>> [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2026-05-26T04:30:20.941Z] *** [apiv2] error from fetch(https://firebase-public.firebaseio.com/cli.json, {"headers":{},"method":"GET"}): FetchError: request to https://firebase-public.firebaseio.com/cli.json failed, reason: getaddrinfo EAI_AGAIN firebase-public.firebaseio.com
+[warn] ⚠  Unable to fetch the CLI MOTD and remote config. This is not a fatal error, but may indicate an issue with your network connection. 
+[debug] [2026-05-26T04:30:20.942Z] Failed to fetch MOTD FirebaseError: Failed to make request to https://firebase-public.firebaseio.com/cli.json
+[debug] [2026-05-26T04:30:20.943Z] *** [apiv2] error from fetch(https://www.googleapis.com/oauth2/v3/token, {"headers":{},"method":"POST","body":{"_overheadLength":545,"_valueLength":212,"_valuesToMeasure":[],"writable":false,"readable":true,"dataSize":0,"maxDataSize":2097152,"pauseStreams":true,"_released":true,"_streams":[],"_currentStream":null,"_insideLoop":false,"_pendingNext":false,"_boundary":"--------------------------7bd8eb0b83cf51fc27dbf22e","_events":{},"_eventsCount":1}}): FetchError: request to https://www.googleapis.com/oauth2/v3/token failed, reason: getaddrinfo EAI_AGAIN www.googleapis.com
+[error] Authentication Error: Your credentials are no longer valid. Please run firebase login --reauth
+
+For CI servers and headless environments, generate a new token with firebase login:ci
+[debug] [2026-05-26T04:30:20.943Z] Authentication Error: Your credentials are no longer valid. Please run firebase login --reauth
+
+For CI servers and headless environments, generate a new token with firebase login:ci
+[debug] [2026-05-26T04:30:20.949Z] FirebaseError: Authentication Error: Your credentials are no longer valid. Please run firebase login --reauth
+
+For CI servers and headless environments, generate a new token with firebase login:ci
+    at invalidCredentialError (/home/nararya/.nvm/versions/node/v20.20.2/lib/node_modules/firebase-tools/lib/auth.js:177:12)
+    at refreshTokens (/home/nararya/.nvm/versions/node/v20.20.2/lib/node_modules/firebase-tools/lib/auth.js:590:15)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async getAccessToken (/home/nararya/.nvm/versions/node/v20.20.2/lib/node_modules/firebase-tools/lib/apiv2.js:52:18)
+    at async Client.addAuthHeader (/home/nararya/.nvm/versions/node/v20.20.2/lib/node_modules/firebase-tools/lib/apiv2.js:182:21)
+    at async Client.request (/home/nararya/.nvm/versions/node/v20.20.2/lib/node_modules/firebase-tools/lib/apiv2.js:129:34)
+    at async getProjectPage (/home/nararya/.nvm/versions/node/v20.20.2/lib/node_modules/firebase-tools/lib/management/projects.js:287:17)
+    at async getFirebaseProjectPage (/home/nararya/.nvm/versions/node/v20.20.2/lib/node_modules/firebase-tools/lib/management/projects.js:304:23)
+    at async listFirebaseProjects (/home/nararya/.nvm/versions/node/v20.20.2/lib/node_modules/firebase-tools/lib/management/projects.js:333:29)
+    at async Command.actionFn (/home/nararya/.nvm/versions/node/v20.20.2/lib/node_modules/firebase-tools/lib/commands/projects-list.js:51:20)
+[error] 
+[error] Error: Failed to list Firebase projects. See firebase-debug.log for more info.
+[debug] [2026-05-26T04:30:21.211Z] Error: EROFS: read-only file system, open '/home/nararya/.config/configstore/firebase-tools.json.1285129147'
+    at Object.openSync (node:fs:573:18)
+    at Function.writeFileSync [as sync] (/home/nararya/.nvm/versions/node/v20.20.2/lib/node_modules/firebase-tools/node_modules/write-file-atomic/index.js:205:13)
+    at set all [as all] (/home/nararya/.nvm/versions/node/v20.20.2/lib/node_modules/firebase-tools/node_modules/configstore/index.js:61:20)
+    at Configstore.delete (/home/nararya/.nvm/versions/node/v20.20.2/lib/node_modules/firebase-tools/node_modules/configstore/index.js:101:12)
+    at process.<anonymous> (/home/nararya/.nvm/versions/node/v20.20.2/lib/node_modules/firebase-tools/lib/bin/cli.js:65:45)
+    at process.emit (node:events:536:35)
+    at process.exit (node:internal/process/per_thread:184:15)
+    at Timeout._onTimeout (/home/nararya/.nvm/versions/node/v20.20.2/lib/node_modules/firebase-tools/lib/errorOut.js:20:17)
+    at listOnTimeout (node:internal/timers:581:17)
+    at process.processTimers (node:internal/timers:519:7)
+[error] 
+[error] Error: An unexpected error has occurred.
